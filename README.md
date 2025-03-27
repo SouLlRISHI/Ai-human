@@ -38,30 +38,67 @@ vscan target.js
 ✨ Competitive Edge
 ✔ Hybrid Detection Engine - Regex + AI analysis
 ✔ Bounty Optimized - Focuses on high-value vulnerabilities
-✔ Safe Environment - Zero real-world impact during testing
+✔ Safe Environment - Zero real-world impact during testing 
 
-📊 Sample Finding
+🔥 Why Security Teams Love This
+<div style="background: #1a1a1a; padding: 15px; border-radius: 5px; border-left: 3px solid #ff5f56; margin: 10px 0;">
+✔ Military-Grade Detection
+Hybrid engine combining:
+• 500+ vulnerability signatures
+• AI-powered anomaly detection
+• Real-time threat intelligence feeds
+
+✔ Bounty Hunter Mode
+Prioritizes findings by:
+• Historical payout data
+• CVSS severity scores
+• Exploitability metrics
+
+✔ Zero-Footprint Testing
+Safety features include:
+• Non-destructive validation
+• Automatic traffic throttling
+• Stealth scan options
+
+</div>
+🎯 Sample Critical Finding
 python
 Copy
-[CRITICAL] Remote Code Execution Detected
-   › Location: api/auth.js (Line 42)
-   › Pattern: child_process.exec()
-   › Confidence: ████████ 92%
-   › Estimated Bounty: $2,000-$5,000
-   › Suggested Fix: Use execFile() with strict input validation
-🚨 Responsible Disclosure
-Always obtain proper authorization before scanning.
-Found a critical vulnerability? Submit to:
-HackerOne
-Bugcrowd
+[🔥 FLAME] Remote Code Execution Detected
+   › File: /api/v1/auth.js (Line 42)  
+   › Attack Vector: child_process.exec(req.body.cmd)  
+   › Confidence: ████████ 98%  
+   › CVE-2023-29476 (Verified)  
+   › Bounty Value: $2,500-$15,000  
+   › POC: curl -X POST http://target.com/api --data '{"cmd":"whoami"}'  
 
-📬 Stay Updated
-Follow @OuLrishi for:
+[💡 RECOMMENDED FIX]  
+• Replace with child_process.execFile()  
+• Implement input validation regex: ^[a-zA-Z0-9_-]+$  
+• Add permission checks (CWE-285)  
+📜 Responsible Disclosure Protocol
+Get Authorization
 
-New vulnerability patterns
+bash
+Copy
+vscan --legal-check <target>
+Validate Responsibly
 
-Bug bounty tips
+bash
+Copy
+vscan --safe-mode <target>
+Submit Properly
+HackerOne Report
+Bugcrowd Submit
 
-Tool updates and patches
+📡 Stay Connected
+diff
+Copy
++ Follow @OuLrishi for:
+! New 0-day alerts           [Daily]
+! Bounty hunting strategies  [Weekly]
+! Tool updates               [Monthly]
 
-<sub>⚠️ For authorized security testing only. Use responsibly.</sub>
+# Trending now: #CVE-2023-29476 exploitation techniques
+<sub>⚠️ Legal Notice: Unauthorized testing violates international laws like CFAA/Computer Misuse Act. Always obtain written permission.</sub>
+
